@@ -1,0 +1,214 @@
+# This function adds two numbers
+def add(x, y):
+    return x + y
+
+# This function subtracts two numbers
+def subtract(x, y):
+    return x - y
+
+# This function multiplies two numbers
+def multiply(x, y):
+    return x * y
+
+# This function divides two numbers
+def divide(x, y):
+    return x / y
+
+
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+
+while True:
+    # take input from the user
+    choice = input("Enter choice(1/2/3/4): ")
+
+    # check if choice is one of the four options
+    if choice in ('1', '2', '3', '4'):
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
+            next_calculation = input("make a conversion? (yes/no): ")
+            if next_calculation == "yes":
+                conversion = input('hex or bin?')
+                if conversion == 'hex':
+                      d = int(add(num1, num2))
+                      h = []
+                      print('d =',d)
+                      while d>0:
+                          R = d%16
+                          x = R
+                          if R==10:
+                            x='A'
+                          elif R==11:
+                            x='B'
+                          elif R==12:
+                            x='C'
+                          elif R==13:
+                            x='D'
+                          elif R==14:
+                            x='E'
+                          elif R==15:
+                            x='F'
+                          h.insert(0,str(x))
+                          d = d//16
+                      hstr = ''
+                      for i in h:
+                          hstr = hstr + str(i)
+                      print('hex = ',hstr)
+                if conversion =='bin':
+                      n= int(add(num1, num2))
+                      x=n
+                      k=[]
+                      while (n>0):
+                         a=int(float(n%2))
+                         k.append(a)
+                         n=(n-a)/2
+                      k.append(0)
+                      string=""
+                      for j in k[::-1]:
+                         string=string+str(j)
+                      print(string)
+
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))
+            if next_calculation == "yes":
+                conversion = input('hex or bin?')
+                if conversion == 'hex':
+                      d = int(subtract(num1, num2))
+                      h = []
+                      print('d =',d)
+                      while d>0:
+                          R = d%16
+                          x = R
+                          if R==10:
+                            x='A'
+                          elif R==11:
+                            x='B'
+                          elif R==12:
+                            x='C'
+                          elif R==13:
+                            x='D'
+                          elif R==14:
+                            x='E'
+                          elif R==15:
+                            x='F'
+                          h.insert(0,str(x))
+                          d = d//16
+                      hstr = ''
+                      for i in h:
+                          hstr = hstr + str(i)
+                      print('hex = ',hstr)
+                if conversion =='bin':
+                      n= int(subtract(num1, num2))
+                      x=n
+                      k=[]
+                      while (n>0):
+                         a=int(float(n%2))
+                         k.append(a)
+                         n=(n-a)/2
+                      k.append(0)
+                      string=""
+                      for j in k[::-1]:
+                         string=string+str(j)
+                      print(string)
+
+        elif choice == '3':
+            print(num1, "*", num2, "=", multiply(num1, num2))
+            if next_calculation == "yes":
+                conversion = input('hex or bin?')
+                if conversion == 'hex':
+                      d = int(multiply(num1, num2))
+                      h = []
+                      print('d =',d)
+                      while d>0:
+                          R = d%16
+                          x = R
+                          if R==10:
+                            x='A'
+                          elif R==11:
+                            x='B'
+                          elif R==12:
+                            x='C'
+                          elif R==13:
+                            x='D'
+                          elif R==14:
+                            x='E'
+                          elif R==15:
+                            x='F'
+                          h.insert(0,str(x))
+                          d = d//16
+                      hstr = ''
+                      for i in h:
+                          hstr = hstr + str(i)
+                      print('hex = ',hstr)
+                if conversion =='bin':
+                      n= int(multiply(num1, num2))
+                      x=n
+                      k=[]
+                      while (n>0):
+                         a=int(float(n%2))
+                         k.append(a)
+                         n=(n-a)/2
+                      k.append(0)
+                      string=""
+                      for j in k[::-1]:
+                         string=string+str(j)
+                      print(string)
+
+        elif choice == '4':
+            print(num1, "/", num2, "=", divide(num1, num2))
+            if next_calculation == "yes":
+                conversion = input('hex or bin?')
+                if conversion == 'hex':
+                      d = int(divide(num1, num2))
+                      h = []
+                      print('d =',d)
+                      while d>0:
+                          R = d%16
+                          x = R
+                          if R==10:
+                            x='A'
+                          elif R==11:
+                            x='B'
+                          elif R==12:
+                            x='C'
+                          elif R==13:
+                            x='D'
+                          elif R==14:
+                            x='E'
+                          elif R==15:
+                            x='F'
+                          h.insert(0,str(x))
+                          d = d//16
+                      hstr = ''
+                      for i in h:
+                          hstr = hstr + str(i)
+                      print('hex = ',hstr)
+                if conversion =='bin':
+                      n= int(divide(num1, num2))
+                      x=n
+                      k=[]
+                      while (n>0):
+                         a=int(float(n%2))
+                         k.append(a)
+                         n=(n-a)/2
+                      k.append(0)
+                      string=""
+                      for j in k[::-1]:
+                         string=string+str(j)
+                      print(string)
+        
+        # check if user wants another calculation
+        # break the while loop if answer is no
+        
+else:
+    print("Invalid Input")
